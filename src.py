@@ -23,8 +23,7 @@ except:
     file = open('data.txt','r')
 
 #add file content into individual line per http request
-for i in file:
-    line = file.readline()
+for line in file:
     #convert to date if it's a request (if [ and : exist in the line)
     try:
         date = datetime.strptime(line[line.index('[')+1:line.index(':')], '%d/%b/%Y').date()
